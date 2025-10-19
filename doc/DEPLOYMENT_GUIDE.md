@@ -54,7 +54,6 @@ git push -u origin main
      ```
      AIRTABLE_PERSONAL_ACCESS_TOKEN = votre_personal_access_token
      AIRTABLE_BASE_ID = votre_base_id
-     AIRTABLE_TABLE_NAME = Produits
      ```
 
 5. **Récupérer l'URL de votre fonction :**
