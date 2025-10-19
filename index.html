@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO Meta Tags -->
+    <title>
+      Crochet Artisan - Produits de Crochet Faits Main | Vente en Ligne
+    </title>
+    <meta
+      name="description"
+      content="Découvrez notre collection unique de produits de crochet faits main : sacs, écharpes, coussins, bonnets bébé. Artisanat français de qualité, livraison rapide."
+    />
+    <meta
+      name="keywords"
+      content="crochet, fait main, artisanat, sac crochet, écharpe, bonnet bébé, coussin, panier, couverture, vente en ligne"
+    />
+    <meta name="author" content="Crochet Artisan" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="fr" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://votre-domaine.com/" />
+    <meta
+      property="og:title"
+      content="Crochet Artisan - Produits de Crochet Faits Main"
+    />
+    <meta
+      property="og:description"
+      content="Découvrez notre collection unique de produits de crochet faits main. Artisanat français de qualité."
+    />
+    <meta
+      property="og:image"
+      content="https://votre-domaine.com/og-image.jpg"
+    />
+    <meta property="og:site_name" content="Crochet Artisan" />
+    <meta property="og:locale" content="fr_FR" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://votre-domaine.com/" />
+    <meta
+      property="twitter:title"
+      content="Crochet Artisan - Produits de Crochet Faits Main"
+    />
+    <meta
+      property="twitter:description"
+      content="Découvrez notre collection unique de produits de crochet faits main. Artisanat français de qualité."
+    />
+    <meta
+      property="twitter:image"
+      content="https://votre-domaine.com/og-image.jpg"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://votre-domaine.com/" />
+
+    <!-- Preconnect pour optimiser les performances -->
+    <link rel="preconnect" href="https://api.airtable.com" />
+    <link rel="preconnect" href="https://www.paypal.com" />
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Structured Data JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Crochet Artisan",
+        "description": "Artisan spécialisé dans la création de produits de crochet faits main",
+        "url": "https://votre-domaine.com",
+        "logo": "https://votre-domaine.com/logo.png",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "availableLanguage": "French"
+        },
+        "sameAs": [
+          "https://www.facebook.com/crochetartisan",
+          "https://www.instagram.com/crochetartisan"
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <header class="header" role="banner">
+      <div class="container">
+        <h1 class="logo">🧶 Crochet Artisan</h1>
+        <button
+          class="theme-toggle"
+          id="themeToggle"
+          aria-label="Changer de thème"
+        >
+          <span class="theme-icon">🌙</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="main" role="main">
+      <section class="hero">
+        <div class="container">
+          <h2 class="hero-title">Produits de Crochet Faits Main</h2>
+          <p class="hero-subtitle">
+            Découvrez notre collection unique d'articles crochetés avec amour
+          </p>
+        </div>
+      </section>
+
+      <section class="products" aria-labelledby="products-title">
+        <div class="container">
+          <h3 class="section-title" id="products-title">Nos Produits</h3>
+
+          <!-- Barre de recherche et tri -->
+          <div class="products-controls">
+            <div class="search-container">
+              <input
+                type="text"
+                id="productSearch"
+                class="search-input"
+                placeholder="Rechercher un produit..."
+                aria-label="Rechercher un produit"
+              />
+              <span class="search-icon">🔍</span>
+              <span class="search-shortcut">Ctrl+K</span>
+            </div>
+
+            <div class="sort-container">
+              <label for="productSort" class="sort-label">Trier par :</label>
+              <select
+                id="productSort"
+                class="sort-select"
+                aria-label="Trier les produits"
+              >
+                <option value="ordre">Ordre d'affichage</option>
+                <option value="nom">Nom (A-Z)</option>
+                <option value="nom-desc">Nom (Z-A)</option>
+                <option value="prix-asc">Prix (croissant)</option>
+                <option value="prix-desc">Prix (décroissant)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Résultats de recherche -->
+          <div class="search-results" id="searchResults" style="display: none">
+            <span class="results-count" id="resultsCount"></span>
+            <button
+              class="clear-search"
+              id="clearSearch"
+              aria-label="Effacer la recherche"
+            >
+              ✕
+            </button>
+          </div>
+
+          <div
+            class="products-grid"
+            role="list"
+            aria-label="Liste des produits de crochet"
+          >
+            <!-- Les produits seront chargés dynamiquement depuis Airtable -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+      <div class="container">
+        <p>&copy; 2024 Crochet Artisan. Tous droits réservés.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
