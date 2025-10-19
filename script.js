@@ -45,7 +45,7 @@ class AirtableManager {
     this.proxyUrl =
       window.location.hostname === "localhost"
         ? "http://localhost:3000/api/products" // Développement local (vercel dev)
-        : "https://votre-projet.vercel.app/api/products"; // Production Vercel
+        : "https://poc-sales-page.vercel.app/api/products"; // Production Vercel
     this.products = []; // Stocker tous les produits
     this.filteredProducts = []; // Produits filtrés
     this.init();
